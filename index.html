@@ -1,245 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TailwindFlex</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Md. Rajibul Islam Shuvo | Full-Stack Developer</title>
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    @keyframes neon-pulse {
-      0%, 100% {
-        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #00ffff, 0 0 35px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 75px #00ffff;
-      }
-      50% {
-        text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 7px #fff, 0 0 10px #00ffff, 0 0 17px #00ffff, 0 0 20px #00ffff, 0 0 25px #00ffff, 0 0 37px #00ffff;
-      }
+    * {
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
     }
-    .neon-text {
-      animation: neon-pulse 1.5s infinite alternate;
+    body {
+      background-color: #f8f9fa;
+      color: #333;
     }
-    .bg-animated {
-      background: linear-gradient(-45deg, #111827, #1e293b, #0f172a, #1e3a8a);
-      background-size: 400% 400%;
-      animation: gradient 15s ease infinite;
+    .navbar {
+      background: linear-gradient(to right, #8B0000, #B22222);
     }
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    .navbar-brand img { height: 50px; }
+    .hero-section {
+      background: linear-gradient(to right, #e0f7ff, #ffffff);
+      padding: 60px 0;
     }
-    .cyber-grid {
-      background-image: linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
-      background-size: 20px 20px;
-      animation: cyber-grid-move 20s linear infinite;
+    .section-title {
+      font-weight: 600;
+      color: #0d6efd;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 30px;
     }
-    @keyframes cyber-grid-move {
-      0% { background-position: 0 0; }
-      100% { background-position: 20px 20px; }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 3px;
+      background: #0d6efd;
+      bottom: -10px;
+      left: 25%;
     }
-    .feature-card {
-      backdrop-filter: blur(10px);
-      background-color: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(0, 255, 255, 0.1);
-      transition: all 0.3s ease;
+    .card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
-    .feature-card:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-    }
-    .feature-icon {
-      transition: all 0.3s ease;
-    }
-    .feature-card:hover .feature-icon {
-      transform: rotate(360deg) scale(1.2);
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-    }
-    .floating {
-      animation: float 6s ease-in-out infinite;
-    }
-    .project-image {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 10px 10px 0 0;
-    }
-    .card-hover-effect {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card-hover-effect:hover {
+    .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .card img {
+      object-fit: cover;
+      border-radius: 10px;
+      height: 250px;
+      width: 100%;
+    }
+    .badge { font-size: 0.85rem; margin: 3px; }
+    .footer {
+      background: linear-gradient(to right, #8B0000, #B22222);
+      color: white;
+      padding: 30px 0;
+    }
+    .footer .bi {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.4rem;
+      transition: color 0.3s;
+    }
+    .footer .bi:hover {
+      color: #ffdf00;
+    }
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .contact-icon {
+      font-size: 2rem;
+      color: #0d6efd;
+      margin-bottom: 15px;
+    }
+    .project-icon {
+      font-size: 1.2rem;
+      margin-right: 5px;
     }
   </style>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+<body>
 
 <!-- NAVBAR -->
-<nav class="relative px-4 py-2 flex justify-between items-center bg-gray-800 dark:bg-gray-900 border-b-2 border-gray-700">
-  <a class="text-2xl font-bold text-violet-400 dark:text-violet-300" href="#">
-    TailwindFlex
-  </a>
-
-  <div class="lg:hidden">
-    <button class="navbar-burger flex items-center text-violet-400 dark:text-gray-100 p-1" id="navbar_burger">
-      <svg class="block h-6 w-6 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <title>Hamberger menu</title>
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-      </svg>
-    </button>
-  </div>
-
-  <ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
-    <li>
-      <div class="relative mx-auto text-gray-600">
-        <input class="border border-gray-600 placeholder-gray-400 h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none bg-gray-700 dark:bg-gray-800 text-white" type="search" name="search" placeholder="Search">
-        <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
-          <svg class="text-gray-400 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.966 56.966">
-            <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17s-17-7.626-17-17S14.61,6,23.984,6z"/>
-          </svg>
-        </button>
-      </div>
-    </li>
-  </ul>
-
-  <div class="hidden lg:flex">
-    <button id="theme-toggle" type="button" class="hidden lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gray-700 border border-gray-600 rounded-md text-white hover:bg-gray-600">
-      <svg id="theme-toggle-dark-icon" class="w-5 h-6 hidden" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-      </svg>
-      <svg id="theme-toggle-light-icon" class="w-5 h-6 hidden" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
-      </svg>
-    </button>
-
-    <a href="https://tailwindflex.com/playground">
-      <button class="py-1.5 px-3 m-1 text-center bg-violet-600 border border-violet-700 rounded-md text-white hover:bg-violet-500">
-        Tailwind Playground
-      </button>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="images/Blue_Flat_Illustrative_Human_Artificial_Intelligence_Technology_Logo-removebg-preview.png" alt="Logo">
     </a>
-
-    <div>
-      <a class="py-1.5 px-3 m-1 text-center bg-gray-700 border border-gray-600 rounded-md text-white hover:bg-gray-600 hidden lg:inline-block" href="https://tailwindflex.com/login">
-        Sign In
-      </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link fw-bold" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="#education">Education</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="#contact">Contact</a></li>
+        <li class="nav-item">
+          <a class="btn btn-light ms-3" target="_blank" href="https://drive.google.com/file/d/1bE5Ah-poxO-7C7R5mzxU1Cw33xXnCzLG/view?usp=drive_link">
+            Resume <i class="bi bi-download ms-1"></i>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
 
 <!-- HERO SECTION -->
-<section class="py-12 bg-gray-900 text-white sm:py-12 lg:py-16">
-  <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-    <div class="max-w-xl mx-auto text-center xl:max-w-2xl">
-      <h2 class="text-3xl font-bold leading-tight sm:text-4xl xl:text-5xl mb-6">We are just getting started!</h2>
-      <p class="mb-4">We are creating a tool that helps you be more productive and efficient when building websites and webapps</p>
+<section class="hero-section" id="home">
+  <div class="container pt-5 mt-5">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h1 class="fw-bold text-primary">Md. Rajibul Islam Shuvo</h1>
+        <h4 class="text-secondary">Full-Stack Developer</h4>
+        <p class="mt-3">
+          <i class="bi bi-telephone-fill"></i> +880 1581620802<br>
+          <i class="bi bi-envelope-fill"></i> rajibulislam3777@gmail.com<br>
+          <i class="bi bi-geo-alt-fill"></i> Lalbagh, Dhaka, Bangladesh<br>
+          <i class="bi bi-linkedin"></i> linkedin.com/in/md-rajibul-islam-shuvo-3235121b3<br>
+          <i class="bi bi-github"></i> github.com/rajib3777
+        </p>
+        
+        <div class="card bg-light p-3 mt-3">
+          <h5>Career Objective</h5>
+          <p>Aspiring Software Developer and passionate problem solver with a solid foundation in C, C++, and Data Structures & Algorithms. Successfully developed projects showcasing analytical thinking and a knack for building efficient, scalable solutions.</p>
+        </div>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="images/my_pic.jpeg" class="img-fluid rounded shadow" style="max-height: 400px;" alt="Profile">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="container my-5 py-5">
+  <h2 class="text-center section-title">Skills</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <ul class="list-group">
+        <li class="list-group-item"><strong>Programming Languages:</strong> Python, C++, C</li>
+        <li class="list-group-item"><strong>Web Development:</strong> HTML, CSS, JavaScript, Django</li>
+        <li class="list-group-item"><strong>Database:</strong> SQLite</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <ul class="list-group">
+        <li class="list-group-item"><strong>Data Structures & Algorithms:</strong> Strong understanding of fundamental concepts</li>
+        <li class="list-group-item"><strong>Version Control:</strong> Git, GitHub</li>
+        <li class="list-group-item"><strong>Problem Solving:</strong> LeetCode problem solver</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="container my-5 py-5" id="projects">
+  <h2 class="text-center section-title">Projects</h2>
+
+  <!-- Event Management -->
+  <div class="card mb-5 bg-light">
+    <div class="row g-0">
+      <div class="col-md-6">
+        <img src="images/event.jpeg" class="img-fluid" alt="Event Management System">
+      </div>
+      <div class="col-md-6 p-4">
+        <h4 class="text-info">Event Management System</h4>
+        <p><i class="bi bi-tags-fill project-icon"></i> Django, Tailwind CSS, SQLite, Render</p>
+        <p>Developed a full-stack event management platform with role-based access for Admin, Organizers, and Participants.</p>
+        <ul>
+          <li>Implemented secure user authentication using Django's built-in Email-based Sign-Up and Login system</li>
+          <li>Designed separate views and dashboards tailored to each user role</li>
+          <li>Built CRUD functionalities for managing events, participants, and categories</li>
+          <li>Applied select_related, prefetch_related, and aggregate() for optimized queries</li>
+        </ul>
+        <p><i class="bi bi-link-45deg project-icon"></i> <strong>Live Demo:</strong> <a href="https://event-management-xq9b.onrender.com" target="_blank">event-management-xq9b.onrender.com</a></p>
+        <span class="badge bg-primary">Email Authentication</span>
+        <span class="badge bg-primary">Role-based Access</span>
+        <span class="badge bg-primary">CRUD Operations</span>
+        <span class="badge bg-primary">Responsive UI</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Frooty Drinks -->
+  <div class="card mb-5 bg-light">
+    <div class="row g-0">
+      <div class="col-md-6">
+        <img src="images/drink1.jpg" class="img-fluid" alt="Frooty Drinks Store">
+      </div>
+      <div class="col-md-6 p-4">
+        <h4 class="text-info">Frooty Drinks Store</h4>
+        <p><i class="bi bi-tags-fill project-icon"></i> HTML, CSS, JavaScript, REST API, Vercel</p>
+        <p>Developed a dynamic e-commerce-style drinks website using vanilla JavaScript and external API integration.</p>
+        <ul>
+          <li>Implemented features like real-time product rendering via API calls</li>
+          <li>"Add to Cart" functionality with live cart item counter using local storage</li>
+          <li>Fully responsive for both desktop and mobile users</li>
+        </ul>
+        <p><i class="bi bi-link-45deg project-icon"></i> <strong>Live Demo:</strong> <a href="https://sample-assignment-02.vercel.app" target="_blank">sample-assignment-02.vercel.app</a></p>
+        <span class="badge bg-success">API Integration</span>
+        <span class="badge bg-success">LocalStorage</span>
+        <span class="badge bg-success">Responsive Design</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Student Management -->
+  <div class="card mb-5 bg-light">
+    <div class="row g-0">
+      <div class="col-md-6">
+        <img src="images/student_management.jpg" class="img-fluid" alt="Student Information Management System">
+      </div>
+      <div class="col-md-6 p-4">
+        <h4 class="text-info">Student Information Management System</h4>
+        <p><i class="bi bi-tags-fill project-icon"></i> C++, Data Structures, File Handling</p>
+        <p>Developed an efficient system to manage student records using C++, linked lists, and file handling.</p>
+        <ul>
+          <li>Features include adding, viewing, searching, deleting student data</li>
+          <li>Persistent data storage using file operations</li>
+          <li>Applied data structures for optimal performance</li>
+        </ul>
+        <p><i class="bi bi-github project-icon"></i> <strong>GitHub:</strong> <a href="https://github.com/rajib3777/Student-Record-Management-System" target="_blank">Student-Record-Management-System</a></p>
+        <span class="badge bg-secondary">Linked Lists</span>
+        <span class="badge bg-secondary">File Handling</span>
+        <span class="badge bg-secondary">Data Structures</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="container my-5 py-5" id="education">
+  <h2 class="text-center section-title">Education</h2>
+  
+  <div class="row">
+    <!-- BAMS -->
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">BAMS (Bachelor of Ayurvedic Medicine and Surgery)</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Department of Medicine, University of Dhaka</h6>
+          <p class="card-text">
+            Campus: Govt. Unani Ayurvedic Medical College Hospital, Mirpur-13<br>
+            Passing Year: 2027
+          </p>
+        </div>
+      </div>
     </div>
     
-    <!-- FEATURE CARDS -->
-    <div class="grid max-w-4xl lg:max-w-6xl grid-cols-1 mx-auto mt-8 text-center gap-y-4 sm:gap-x-8 sm:grid-cols-2 lg:grid-cols-3 sm:mt-12 lg:mt-20 sm:text-left">
-      <!-- Feature cards remain the same -->
-      <!-- ... -->
+    <!-- CSE Professional Course -->
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">CSE Professional Course</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Phitron</h6>
+          <p class="card-text">
+            Master Basic Programming, Data Structures, Algorithm, OOP, Database and solve 500+ coding problems<br>
+            Key Topics: CSE fundamentals, Data Structure, OOP, Database, AWS, Machine Learning, JavaScript, HTML, Django<br>
+            Completion Date: July 2025
+          </p>
+        </div>
+      </div>
     </div>
   </div>
-</section>
-
-<!-- PROJECTS SECTION -->
-<section class="container my-5 py-5" id="projects">
-  <h2 class="text-center text-3xl font-bold mb-8 text-violet-600 dark:text-violet-400">Projects</h2>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    <!-- Project 1 -->
-    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover-effect">
-      <img src="images/event.jpeg" class="project-image" alt="Event Management System">
-      <div class="p-6">
-        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Event Management System</h3>
-        <div class="flex flex-wrap mb-4">
-          <span class="bg-violet-100 dark:bg-violet-900 text-violet-800 dark:text-violet-200 px-3 py-1 rounded-full text-xs mr-2 mb-2">Django</span>
-          <span class="bg-violet-100 dark:bg-violet-900 text-violet-800 dark:text-violet-200 px-3 py-1 rounded-full text-xs mr-2 mb-2">Tailwind</span>
-          <span class="bg-violet-100 dark:bg-violet-900 text-violet-800 dark:text-violet-200 px-3 py-1 rounded-full text-xs mr-2 mb-2">SQLite</span>
+  
+  <div class="row">
+    <!-- HSC -->
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">HSC</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Mohammadpur Govt. College</h6>
+          <p class="card-text">
+            Board: Dhaka<br>
+            Group: Science<br>
+            GPA: 5.00
+          </p>
         </div>
-        <p class="text-gray-600 dark:text-gray-300 mb-4">Developed a full-stack event management platform with role-based access for Admin, Organizers, and Participants.</p>
-        <a href="https://event-management-xq9b.onrender.com" target="_blank" class="text-violet-600 dark:text-violet-400 hover:underline">Live Demo →</a>
       </div>
     </div>
-
-    <!-- Project 2 -->
-    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover-effect">
-      <img src="images/drink1.jpg" class="project-image" alt="Frooty Drinks Store">
-      <div class="p-6">
-        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Frooty Drinks Store</h3>
-        <div class="flex flex-wrap mb-4">
-          <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-xs mr-2 mb-2">JavaScript</span>
-          <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-xs mr-2 mb-2">REST API</span>
-          <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-xs mr-2 mb-2">Vercel</span>
+    
+    <!-- SSC -->
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">SSC</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Dhanmondi Govt. Boys' High School</h6>
+          <p class="card-text">
+            Board: Dhaka<br>
+            Group: Science<br>
+            GPA: 5.00
+          </p>
         </div>
-        <p class="text-gray-600 dark:text-gray-300 mb-4">Developed a dynamic e-commerce-style drinks website using vanilla JavaScript and external API integration.</p>
-        <a href="https://sample-assignment-02.vercel.app" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">Live Demo →</a>
-      </div>
-    </div>
-
-    <!-- Project 3 -->
-    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover-effect">
-      <img src="images/student_management.jpg" class="project-image" alt="Student Management System">
-      <div class="p-6">
-        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Student Management System</h3>
-        <div class="flex flex-wrap mb-4">
-          <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-xs mr-2 mb-2">C++</span>
-          <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-xs mr-2 mb-2">Data Structures</span>
-          <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-xs mr-2 mb-2">File Handling</span>
-        </div>
-        <p class="text-gray-600 dark:text-gray-300 mb-4">Developed an efficient system to manage student records using C++, linked lists, and file handling.</p>
-        <a href="https://github.com/rajib3777/Student-Record-Management-System" target="_blank" class="text-green-600 dark:text-green-400 hover:underline">View on GitHub →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Rest of your content remains the same -->
-<!-- ... -->
+<!-- CERTIFICATIONS & EXTRACURRICULAR -->
+<section class="container my-5 py-5">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Certifications & Achievements</h5>
+          <ul>
+            <li>Demonstrated strong problem-solving skills on coding platforms like LeetCode</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Extracurricular Activities</h5>
+          <ul>
+            <li>Participated in online coding challenges and collaborative development forums</li>
+            <li>Ex-student coordinator Of Dhanmondi Govt. Boys' Debating Club</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGE SKILLS -->
+<section class="container my-5 py-5">
+  <div class="card">
+    <div class="card-body text-center">
+      <h5 class="card-title">Language Skills</h5>
+      <div class="row">
+        <div class="col-md-4">
+          <span class="badge bg-primary p-2">English</span>
+        </div>
+        <div class="col-md-4">
+          <span class="badge bg-primary p-2">Bengali</span>
+        </div>
+        <div class="col-md-4">
+          <span class="badge bg-primary p-2">German (Basic)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="container my-5 py-5" id="contact">
+  <h2 class="text-center section-title">Contact Me</h2>
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body text-center">
+          <h4 class="card-title">Direct Contact</h4>
+          <div class="mt-4">
+            <i class="bi bi-telephone-fill contact-icon"></i>
+            <p>+880 1581620802</p>
+          </div>
+          <div class="mt-4">
+            <i class="bi bi-envelope-fill contact-icon"></i>
+            <p>rajibulislam3777@gmail.com</p>
+          </div>
+          <div class="mt-4">
+            <i class="bi bi-geo-alt-fill contact-icon"></i>
+            <p>Lalbagh, Dhaka, Bangladesh</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body text-center">
+          <h4 class="card-title">Social Media</h4>
+          <div class="mt-4">
+            <a href="https://linkedin.com/in/md-rajibul-islam-shuvo-3235121b3" target="_blank" class="btn btn-outline-primary mb-2">
+              <i class="bi bi-linkedin"></i> LinkedIn
+            </a>
+          </div>
+          <div class="mt-2">
+            <a href="https://github.com/rajib3777" target="_blank" class="btn btn-outline-dark mb-2">
+              <i class="bi bi-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
-<footer class="bg-gray-800 dark:bg-gray-900 text-white py-12">
-  <div class="container mx-auto px-4">
-    <div class="flex flex-col md:flex-row justify-between items-center">
-      <div class="mb-6 md:mb-0">
-        <a href="#" class="text-2xl font-bold text-violet-400">TailwindFlex</a>
-        <p class="mt-2 text-gray-400">Building better web experiences</p>
-      </div>
-      <div class="flex space-x-6">
-        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-          <i class="fab fa-github text-2xl"></i>
-        </a>
-        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-          <i class="fab fa-linkedin text-2xl"></i>
-        </a>
-        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-          <i class="fab fa-twitter text-2xl"></i>
-        </a>
-      </div>
-    </div>
-    <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-      <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 TailwindFlex. All rights reserved.</p>
-      <div class="flex space-x-6">
-        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
-        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Contact Us</a>
-      </div>
-    </div>
+<footer class="footer text-center">
+  <p class="mb-1">&copy; 2023 Md. Rajibul Islam Shuvo</p>
+  <p class="location">Lalbagh, Dhaka, Bangladesh</p>
+  <div class="social-icons mt-3">
+    <a href="https://github.com/rajib3777" target="_blank"><i class="bi bi-github"></i></a>
+    <a href="https://linkedin.com/in/md-rajibul-islam-shuvo-3235121b3" target="_blank"><i class="bi bi-linkedin"></i></a>
   </div>
 </footer>
 
-<!-- Mobile navbar (same as before) -->
-<!-- ... -->
-
-<!-- Your existing JavaScript -->
-<script>
-  // Theme toggle and other JS remains the same
-  // ...
-</script>
-
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
