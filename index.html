@@ -15,11 +15,11 @@
       font-family: 'Poppins', sans-serif;
     }
     body {
-      background-color: #f8f9fa;
+      background-color: #2e4052ff;
       color: #333;
     }
     .navbar {
-      background: linear-gradient(to right, #8B0000, #B22222);
+      background: linear-gradient(to right, #05729cff, #f5f2f2ff);
     }
     .navbar-brand img { height: 50px; }
     .hero-section {
@@ -70,7 +70,7 @@
       transition: color 0.3s;
     }
     .footer .bi:hover {
-      color: #ffdf00;
+      color: #05729cff;
     }
     .timeline {
       position: relative;
@@ -251,13 +251,13 @@
         <div class="row">
           <div class="col-md-6">
             <p><strong>Name:</strong> Md. Rajibul Islam Shuvo</p>
-            <p><strong>Email:</strong> rajibul.islam3777@gmail.com</p>
-            <p><strong>Phone:</strong> +880 1777-123456</p>
+            <p><strong>Email:</strong> rajibulislam3777@gmail.com</p>
+            <p><strong>Phone:</strong> +880 15816 20802</p>
           </div>
           <div class="col-md-6">
             <p><strong>Location:</strong> Lalbagh, Dhaka, Bangladesh</p>
             <p><strong>Freelance:</strong> Available</p>
-            <p><strong>Languages:</strong> English, Bengali</p>
+            <p><strong>Languages:</strong> English, Bengali,German</p>
           </div>
         </div>
       </div>
@@ -266,7 +266,7 @@
 </section>
 
 <!-- PORTFOLIO SECTION -->
-<section class="container my-5 py-5" id="portfolio">
+{% comment %} <section class="container my-5 py-5" id="portfolio">
   <h2 class="text-center section-title">Projects</h2>
 
   <!-- Project: Event -->
@@ -373,6 +373,128 @@
         <a href="https://github.com/rajib3777/BANK_ACCOUNT_SYSTEM" target="_blank" class="btn btn-outline-dark btn-sm">
           <i class="bi bi-github"></i> View Code
         </a>
+      </div>
+    </div>
+  </div>
+</section> {% endcomment %}
+<section class="container my-5" id="projects">
+  <h2 class="text-center section-title">Projects</h2>
+
+  <!-- Single Project Card Template -->
+  <div class="row g-5">
+    <!-- Event Management System -->
+    <div class="col-12">
+      <div class="card flex-md-row bg-dark text-light overflow-hidden shadow rounded">
+        <div class="col-md-6">
+          <img src="images/event.jpeg" class="img-fluid h-100 w-100" alt="Event Management System" style="object-fit: cover;">
+        </div>
+        <div class="col-md-6 p-4">
+          <h4 class="text-warning">Event Management System</h4>
+          <p>Django-based system for managing events with role-based views and optimized queries.</p>
+          <ul>
+            <li>Admin/Organizer/Participant dashboards</li>
+            <li>Email authentication</li>
+            <li>CRUD for events & RSVPs</li>
+            <li>Responsive design with Tailwind CSS</li>
+          </ul>
+          <div class="mb-2">
+            <span class="badge bg-warning text-dark">Django</span>
+            <span class="badge bg-warning text-dark">Tailwind CSS</span>
+            <span class="badge bg-warning text-dark">Python</span>
+            <span class="badge bg-warning text-dark">Render</span>
+          </div>
+          <a href="https://event-management-xq9b.onrender.com" target="_blank" class="btn btn-outline-warning btn-sm me-2">
+            <i class="bi bi-globe"></i> Live Site
+          </a>
+          <a href="https://github.com/rajib3777/Event_Management_System" target="_blank" class="btn btn-outline-light btn-sm">
+            <i class="bi bi-github"></i> View Code
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Frooty Drinks Web App -->
+    <div class="col-12">
+      <div class="card flex-md-row bg-dark text-light overflow-hidden shadow rounded">
+        <div class="col-md-6">
+          <img src="images/drink1.jpg" class="img-fluid h-100 w-100" alt="Frooty Drinks Web App" style="object-fit: cover;">
+        </div>
+        <div class="col-md-6 p-4">
+          <h4 class="text-warning">Frooty Drinks Web App</h4>
+          <p>A dynamic drinks store using REST API, with cart and live item count.</p>
+          <ul>
+            <li>Product list via REST API</li>
+            <li>localStorage-based cart functionality</li>
+            <li>Responsive design</li>
+            <li>Deployed on Vercel</li>
+          </ul>
+          <div class="mb-2">
+            <span class="badge bg-warning text-dark">JavaScript</span>
+            <span class="badge bg-warning text-dark">REST API</span>
+            <span class="badge bg-warning text-dark">HTML</span>
+            <span class="badge bg-warning text-dark">CSS</span>
+          </div>
+          <a href="https://sample-assignment-02.vercel.app/" target="_blank" class="btn btn-outline-warning btn-sm me-2">
+            <i class="bi bi-globe"></i> Live Site
+          </a>
+          <a href="https://github.com/rajib3777/Frooty_Drinks_Web_App" target="_blank" class="btn btn-outline-light btn-sm">
+            <i class="bi bi-github"></i> View Code
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bus Ticketing System -->
+    <div class="col-12">
+      <div class="card flex-md-row bg-dark text-light overflow-hidden shadow rounded">
+        <div class="col-md-6">
+          <img src="images/bus_new_02.png" class="img-fluid h-100 w-100" alt="Bus Ticketing System" style="object-fit: cover;">
+        </div>
+        <div class="col-md-6 p-4">
+          <h4 class="text-warning">Bus Ticketing System</h4>
+          <p>Python OOP-based console project for booking and managing bus tickets.</p>
+          <ul>
+            <li>Route listing and selection</li>
+            <li>Ticket booking system</li>
+            <li>Set custom PIN for security</li>
+            <li>Admin and user interfaces</li>
+          </ul>
+          <div class="mb-2">
+            <span class="badge bg-secondary">Python</span>
+            <span class="badge bg-secondary">OOP</span>
+            <span class="badge bg-secondary">Console App</span>
+          </div>
+          <a href="https://github.com/rajib3777/Bus_Ticket_Booking" target="_blank" class="btn btn-outline-light btn-sm">
+            <i class="bi bi-github"></i> View Code
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bank Management System -->
+    <div class="col-12">
+      <div class="card flex-md-row bg-dark text-light overflow-hidden shadow rounded">
+        <div class="col-md-6">
+          <img src="images/bank_new_1.jpg" class="img-fluid h-100 w-100" alt="Bank Account Management System" style="object-fit: cover;">
+        </div>
+        <div class="col-md-6 p-4">
+          <h4 class="text-warning">Bank Account Management System</h4>
+          <p>Python OOP project with savings/current account features, PIN setup, deposit/withdraw.</p>
+          <ul>
+            <li>Create savings/current accounts</li>
+            <li>Deposit, withdraw, view balance</li>
+            <li>Transaction history</li>
+            <li>Account management system</li>
+          </ul>
+          <div class="mb-2">
+            <span class="badge bg-secondary">Python</span>
+            <span class="badge bg-secondary">OOP</span>
+            <span class="badge bg-secondary">Console App</span>
+          </div>
+          <a href="https://github.com/rajib3777/BANK_ACCOUNT_SYSTEM" target="_blank" class="btn btn-outline-light btn-sm">
+            <i class="bi bi-github"></i> View Code
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -488,10 +610,10 @@
   <div class="timeline">
     <div class="timeline-item left">
       <div class="timeline-content">
-        <h4>Bachelor of Science in Computer Science</h4>
-        <p class="text-muted">Daffodil International University</p>
-        <p>2020 - 2024</p>
-        <p>CGPA: 3.50/4.00</p>
+        <h4>BAMS from Department of Pharmacy</h4>
+        <p class="text-muted">University of Dhaka</p>
+        <p>2022 - 2027</p>
+        
       </div>
     </div>
     <div class="timeline-item right">
@@ -510,12 +632,17 @@
         <p>GPA: 4.89/5.00</p>
       </div>
     </div>
-    <div class="timeline-item right">
-      <div class="timeline-content">
-        <h4>Full-Stack Developer Intern</h4>
-        <p class="text-muted">ABC Tech Solutions</p>
-        <p>Jan 2023 - Jun 2023</p>
-        <p>Worked on Django-based web applications, implemented REST APIs, and collaborated with the team on various projects.</p>
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">CSE Professional Course</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Phitron</h6>
+          <p class="card-text">
+            Master Basic Programming, Data Structures, Algorithm, OOP, Database and solve 500+ coding problems<br>
+            Key Topics: CSE fundamentals, Data Structure, OOP, Database, AWS, Machine Learning, JavaScript, HTML, Django<br>
+            Completion Date: July 2025
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -534,11 +661,11 @@
         </div>
         <div class="text-center mb-4">
           <i class="bi bi-envelope-fill contact-icon"></i>
-          <p>rajibul.islam3777@gmail.com</p>
+          <p>rajibulislam3777@gmail.com</p>
         </div>
         <div class="text-center mb-4">
           <i class="bi bi-telephone-fill contact-icon"></i>
-          <p>+880 1777-123456</p>
+          <p> +880 15816 20802</p>
         </div>
         <div class="text-center">
           <a href="https://github.com/rajib3777" target="_blank" class="me-3"><i class="bi bi-github fs-3"></i></a>
